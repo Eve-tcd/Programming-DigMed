@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
        let index= Math.round(Math.random() *troyPictures.length)
         console.log(index)
         moviePosterImage.setAttribute("src", troyPictures[index]);
+    
     });
 
 
