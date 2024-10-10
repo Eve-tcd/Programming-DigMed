@@ -1,0 +1,8 @@
+body{
+    font-family: sans-serif;
+}
+
+.wrapper{
+    width: 80%vw;
+    margin: 40px, auto;
+}
