@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         console.log("clicked");
         let moviePosterImage = document.getElementById("troy-The-Boy");
         
-       let index= Math.round(Math.random() *troyPictures.length)
+       let index= Math.floor(Math.random() *troyPictures.length)
         console.log(index)
         moviePosterImage.setAttribute("src", troyPictures[index]);
     
