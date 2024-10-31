@@ -1,0 +1,18 @@
+body{
+    background-color:  #FFC0CB   
+}
+.title{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 4em;
+}
+.alien{
+    color: #6CC417
+}
+
+.text{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2em;
+}
