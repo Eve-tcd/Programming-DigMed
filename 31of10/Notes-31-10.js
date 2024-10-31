@@ -78,11 +78,11 @@ class Person{
         console.log(`hello  ${this.name}`)
     }
 }
-//
-//let rory = new Person("Rory");
-//rory.greet();
 
-//console.log("name", rory.name)
+let rory = new Person("Rory");
+rory.greet();
+
+console.log("name", rory.name)
 
 
 //Polymorphism//
