@@ -34,7 +34,7 @@ class Alien{
  let martians = new martian("The Martians")
 
  let repts = new reptile ("Reptilian humanoids")
-
+ 
  console.log(`Oh No! The ${yourmom.species} is ${yourmom.move()} towards us! `);
 
 console.log(`Run! The ${martians.species} are ${martians.move()} all around the console!!`)
