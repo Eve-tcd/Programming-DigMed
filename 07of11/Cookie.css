@@ -1,0 +1,32 @@
+body{
+    background: url("https://wallpapers.com/images/featured/space-sjryfre8k8f6i3ge.jpg");
+    background-size:100%;
+}
+.button{
+    width: 50%;
+   position: absolute;
+   top: 0px;
+   left: 50%;
+   margin-left: -15%;
+
+}
+button{
+   align-items: center;
+   float:center;
+   background-color: #f7ade0;
+   border-color:#a8167a;
+   border-radius: 8px;
+   border-width: 4px;
+   border-style:double;
+   box-shadow: 4.8px 9.6px 9.6px hsl(0deg 0% 0% / 0.35);
+   
+}
+
+.kewl{
+    margin-top:10%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: #f542bc;
+    font-size:3.5em;
+    text-shadow: 4.8px 9.6px 9.6px hsl(0deg 0% 0% / 0.35);
+}
