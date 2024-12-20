@@ -1,0 +1,757 @@
+
+
+/* HEADER AND NAV ON ALL PAGES */
+
+:root {
+    --background-color-light: #f4f4f4;
+    --text-color-light: #333;
+    --background-color-dark: #121212;
+    --text-color-dark: #f4f4f4;
+    --card-background-light: #fff;
+    --card-background-dark: #1e1e1e;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(255, 255, 255, 0.1);
+    --accent-color: #ff69b4;
+    --accent-hover-color: #ff1493
+    ;
+    --footer-background-color: #333;
+    --footer-text-color: #fff;
+    --form-dark: #E1D9D1;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-light);
+    background-color: var(--background-color-light);
+}
+
+.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+header {
+    background-color: var(--card-background-light);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.0rem;
+    font-weight: 500;
+    letter-spacing: 0.1em; /*even spacing between logo*/
+    color: var(--text-color-light);
+    text-transform: uppercase;
+    position: relative;
+  
+}/*learned about em from here --> https://www.w3.org/Style/Examples/007/units.en.html#units */
+
+.logo::after { /*creation of a line under the 'Eve' within the logo*/
+    content: '';
+    display: block;
+    height: 4px; /*limits height of the underline*/
+    width: 35%; /* limits the length of the line to only underline my firstt name */
+    background: var(--accent-color);
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+	transition: width 0.3s; /*makes the hover transition more gradual*/
+}
+
+.logo:hover::after {
+    width: 100%; /*lengthens line under the Logo to the full width of my name */
+}/*above pseudo elements learned from
+https://developer.mozilla.org/en-US/docs/Web/CSS/::after
+https://www.w3schools.com/css/css_pseudo_elements.asp#:~:text=What%20are%20Pseudo%2DElements%3F,before%20or%20after%20an%20element
+and
+https://www.youtube.com/watch?app=desktop&v=UpJyCDEXEtc */
+.tagline {
+    font-size: 0.8rem; /* Smaller font size */
+    color: #666; /* Softer grey colour */
+    margin-top: 5px; /* Small spacing below the logo */
+    text-transform: none; /* Regular text */
+}
+nav {
+    max-width: 1200px;
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items:center; /*keeps space centre within the nav rather than the top of the bar */
+}
+
+.nav-links {
+    list-style: none; /*removes the bulletpoints */
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline; /*keeps the list within the same line in the nav bar */
+}
+
+.nav-links li a {
+    text-decoration: none; /*removes underline from nav links */
+    color: var(--text-color-light);
+    position: relative;
+    
+}
+
+.nav-links li a.active {
+    font-weight: bold; /*makes active page link bolded distinguishing from non-active links*/
+	
+}
+
+.nav-links li a::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #var(--text-color-light);
+    position: absolute;
+    opacity: 0; /*hides everything within this class until changed during hover - see below*/
+    
+}
+
+.nav-links li a:hover::after {
+    opacity: 1; /*makes all of the above elemts appear on hover through change of opacity*/
+}
+.nav-links li a:hover {
+    color: var(--accent-hover-color)
+    ;
+}
+footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Switch container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #ff69b4; /* Pink when active */
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.dark-mode-label {
+    font-size: 1rem;
+    color: #fff;
+}
+
+
+/*BELOW IS LAYOUT FOR HOME PAGE ONLY */
+
+
+.main {
+    height: 100vh; /*makes the main content fill 100% of the viewable screen's height, within class context*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;
+    background-color: var(--card-background-light);
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* rounded image, learned from -> https://www.w3schools.com/howto/howto_css_rounded_images.asp */
+    margin-right: 20px;
+    object-fit: cover;
+    float: left;
+}
+
+.main-text h1 {
+    font-size: 4em;
+    color: var(--text-color-light);
+}
+
+.blurb-text {
+    font-size: 1.2em; 
+    color: #555;      
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.main p {
+    font-size: 1.2em;
+    margin: 20px ;
+}
+.proj-button {
+    color: var(--accent-color);  
+    font-size: 1.2em;  
+}
+
+.proj-button:hover {
+    color: var(--accent-hover-color)
+    ; 
+}
+
+
+/*BELOW IS LAYOUT FOR ABOUT PAGE ONLY */
+
+
+.about-section {
+    max-width: 800px;
+    margin:  auto ; /* Centre the box while also creating a gap between the nav bar and the flex box */
+    padding: 30px;
+    background-color: var(--card-background-light);
+    border-radius: 8px; /*rounds corners of the flex box*/
+    margin-top: 100px;
+}
+
+.about-section h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--text-color-light); /* Black */
+}
+
+.about-section p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #555; 
+}
+
+.about-section h2 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: var(--text-color-light); 
+}
+.about-section a {
+    color: var(--accent-color); 
+}
+
+.about-section a:hover {
+    color:var(--accent-hover-color)
+
+}
+
+.dog-introduction {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.dog-image {
+    max-width: 200px;
+    border-radius: 8px;
+   
+}
+
+.dog-description h3 {
+    font-size: 1.5em;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+}
+
+.dog-description p {
+    font-size: 1em;
+    color: #555;
+}
+
+.travel-introduction {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.travel-description h3 {
+    font-size: 1.5em;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+}
+
+.image-description {
+    font-size: 1em;
+    color: #555;
+    text-align:center;
+    margin:0 auto;
+}
+#travel-image {
+	display: flex;
+	flex: center;
+	max-width:400px;
+    max-height: 400px;
+	margin: 0 auto;
+}
+.button-selector {
+
+    font-size: 16px;
+    
+}
+
+#back {
+    float: left;
+    margin-left: 20px; 
+}
+
+
+#next {
+    float: right;
+    margin-right: 10px; 
+}
+
+
+/*BELOW IS LAYOUT FOR PROJECTS PAGE ONLY*/
+
+
+.projects-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #var(--background-color-light); /*matches background colour, aiding the aesthetic I want*/
+    border-radius: 8px;
+}
+
+.projects-section h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--text-color-light); 
+    text-align: center;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    gap: 30px; /* Space between project sections */
+}
+
+.project-card {
+      display: flex;
+    flex-direction: row; /* Aligns everything within the card */
+    align-items: center; 
+    background-color: var(--card-background-light); /*white colour for each card to stand out from the background*/
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgb(0, 0, 0, 0.2); /* adds shadow to card allowing it to stand out from the background */
+	/* learned from -> https://www.w3schools.com/css/css3_shadows_box.asp */
+}
+
+.project-card:hover {
+    transform: scale(1.05); /* grow effect on hover learned from -> https://travis.media/blog/how-to-make-an-item-grow-on-hover-with-css/ */
+  
+}
+
+.project-image {
+	display: flex;
+	float: center;
+	width:10%;
+	height: 10%;
+	margin-left:10px;
+}
+
+.project-info {
+    padding: 20px;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* Aligns all the text to the centre for a better aesthetic */
+}
+
+.project-info h2 {
+    font-size: 1.5em;
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 1em;
+    color: #555; 
+    margin-bottom: 15px;
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    
+}
+
+.project-link:hover {
+    color: var(--accent-hover-color)
+    ;
+}
+
+
+/*BELOW IS LAYOUT FOR PROJECTS Learn More BASIC INFO FURTHER DETAILS ARE SEPERATED BY PROJECT*/
+
+
+
+.bProj-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.bProj-content {
+	background-color:var(--card-background-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    margin-top: 20px;
+}
+
+.bProj-title {
+   
+    font-size: 1.8em;
+   
+    margin-bottom: 20px;
+}
+
+.bProj-overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.bProj-description {
+    width: 60%;
+    font-size: 18px;
+    color: #555;
+}
+
+.bProj-image img {
+    width: 35%;
+    border-radius: 8px;
+    margin-left: 20px;
+	float: right;
+	margin-right: 50px;
+}
+
+
+/* Thesis Specific Details */
+
+
+.thesis-details {
+    background-color: var(--card-background-light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.thesis-details-title {
+   
+    font-size: 1em;
+    
+    margin-bottom: 10px;
+}
+
+.thesis-details-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.thesis-details-list li {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+/*BELOW IS LAYOUT FOR VYCE GAMES SPECIFIC DETAILS*/
+
+
+.vyce-details{
+	background-color: var(--card-background-light);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}/* this div allows for the layout of the details to lay below the header and image- the shadow has been removed, unlike the thesis details div as I wanted this to have an aesthetic resembling a blog post as a nod to my work with vyce games */
+.vyce-details a {
+    color: var(--accent-color); 
+}
+ .vyce-details a:hover {
+    color:var(--accent-hover-color)
+
+}
+
+
+
+/*BELOW IS LAYOUT FOR HTML SPECIFIC DETAILS*/ 
+
+
+.html-section{
+	/* As this section is a place holder I didn't end up giving it any specific details to only this page, however I wanted to keep a clear designated section for this page within the style sheet so that I am able to change this section with greater ease and organisation in the future*/
+}
+
+
+/*BELOW IS LAYOUT FOR CV SECTION ONLY*/
+
+
+.cv-header{
+	margin-top: 100px;
+	font-size:2.2em;
+	text-align: center;
+	 margin-bottom: 20px;
+	color:var(--text-color-light)
+}
+.cv-section{
+font-size:16px
+}
+
+ .cv-section {
+    max-width: 800px; 
+     margin: 20px auto 80px;
+    padding: 20px; 
+    background: var(--card-background-light); 
+    border-radius: 8px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.cv-section h1 {
+    font-size: 2.2em; 
+    margin-bottom: 10px; 
+    color: var(--text-color-light); 
+    font-weight: bold; 
+}
+
+.cv-section .title {
+    font-size: 1.5em; 
+    margin-bottom: 20px; 
+    color: #555; 
+}
+
+.contact-info {
+    margin-bottom: 20px; 
+    font-size: 1em; 
+}
+
+.contact-info a {
+    color: var(--accent-color); 
+}
+
+.contact-info a:hover {
+    color:var(--accent-hover-color)
+
+}
+
+.cv-section h2 {
+    font-size: 1.8em; 
+    margin-top: 30px; 
+    margin-bottom: 10px; 
+    color: var(--text-color-light); 
+}
+
+.job, .education {
+    margin-bottom: 20px;
+}
+
+.job h3, .education h3 {
+    font-size: 1.2em; 
+    margin: 0; 
+}
+
+.company {
+    font-size: 1em; 
+    color: #777; 
+}
+
+ul {
+    padding-left: 20px; 
+}
+
+
+.skills {
+    padding-left: 20px; 
+}
+
+.skills li {
+    margin-bottom: 5px;
+}
+
+
+
+/*BELOW IS LAYOUT FOR CONTACT ME PAGE ONLY */
+
+
+.contact-header{
+	margin-top: 100px;
+	font-size:2.2em;
+	text-align: center;
+	 margin-bottom: 20px;
+	color:var(--text-color-light)
+}
+.contact-box{
+	margin: 0 auto;
+	padding: 20px;
+	background-color:var(--card-background-light);
+	border-radius:8px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	margin-bottom: 20px;
+	max-width: 900px;
+}
+.subH{
+	text-align: center;
+	font-size:1.5em;
+	color:#666;
+}
+.contact-form {
+    display: flex; 
+    flex-direction: column; 
+}
+
+label {
+    margin-bottom: 5px; 
+}
+
+input, textarea {
+    padding: 10px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    font-size: 16px; 
+}
+
+button {
+    background-color: var(--accent-color); 
+    color: #var(--card-background-light); 
+    border: none; 
+    padding: 10px; 
+    border-radius: 4px;  
+    font-size: 18px; 
+}
+
+button:hover {
+    background-color: var(--accent-hover-color)
+    ; 
+}/*Contact me form learned from --> https://www.w3schools.com/howto/howto_css_contact_form.asp */
+
+.dark-mode body {
+    color: var(--text-color-dark);
+    background-color: var(--background-color-dark);
+}
+
+.dark-mode header,
+.dark-mode .main,
+.dark-mode .about-section,
+.dark-mode .projects-section,
+.dark-mode .project-card,
+.dark-mode .bProj-overview,
+.dark-mode .bProj-content,
+.dark-mode .thesis-details,
+.dark-mode .vyce-details,
+.dark-mode .cv-section {
+    background-color: var(--card-background-dark);
+    box-shadow: 0 2px 5px var(--shadow-dark);
+}
+.dark-mode .form-text{
+    background-color: var(--form-dark)
+}
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode a {
+    color: var(--text-color-dark);
+}
+
+.dark-mode .linkedin,
+.dark-mode .title,
+.dark-mode .vyce-details a,
+.dark-mode .about-section a,
+.dark-mode .project-link{
+    color:var(--accent-color);
+}
+
+.dark-mode .proj-button{
+    color: var(--accent-color);
+}
+
+.dark-mode .nav-links li a,
+.dark-mode .image-description{
+    color: var(--text-color-dark);
+}
+
+.dark-mode .nav-links li a:hover {
+    color: var(--accent-color)
+    ;
+}
+.dark-mode footer {
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+}
+.dark-mode .contact-box{
+    background-color: var(--card-background-dark);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: var(--footer-text-color);
+}
+
+button:hover {
+    background-color: var(--accent-hover-color);
+}

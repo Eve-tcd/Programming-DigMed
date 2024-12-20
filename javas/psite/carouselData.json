@@ -1,0 +1,113 @@
+[
+    {
+        "src":"photos/travel/image1.jpg",
+        "description": "DisneyLand Castle, Anaheim (Night)"
+
+    },
+
+    {
+        "src":"photos/travel/image2.jpg",
+        "description":"DisneyLand Toon Town, Anaheim"
+
+    },
+    
+    {
+        "src":"photos/travel/image3.jpg",
+        "description":"Hollywood Sign, Griffith Observatory, Los Angeles"
+
+    },
+
+    {
+        "src":"photos/travel/image4.jpg",
+        "description":"Nice, France"
+
+    },
+
+    {
+        "src":"photos/travel/image5.jpg",
+        "description":"Balboa Park, San Diego, California"
+
+    },
+    {
+        "src":"photos/travel/image6.jpg",
+        "description":"Nice, France"
+
+    },
+    {
+        "src":"photos/travel/image7.jpg",
+        "description":"Disney Land Castle, Anaheim "
+
+    },
+    {
+        "src":"photos/travel/image8.jpg",
+        "description":"Antibes, France"
+
+    },
+    {
+        "src":"photos/travel/image9.jpg",
+        "description":"Antibes, France"
+
+    },
+    {
+        "src":"photos/travel/image10.jpg",
+        "description":"Disney's Califnoria Adventure, Amaheim"
+
+    },
+    {
+        "src":"photos/travel/image11.jpg",
+        "description":"Star Wars Galaxy Edge, Anaheim"
+
+    },
+    {
+        "src":"photos/travel/image12.jpg",
+        "description":"Camden Market Street Art, London"
+
+    },
+    {
+        "src":"photos/travel/image13.jpg",
+        "description":"The Friendship Bell, California"
+
+    },
+    {
+        "src":"photos/travel/image14.jpg",
+        "description":"View From The Friendship Bell, California"
+
+    },
+    {
+        "src":"photos/travel/image15.jpg",
+        "description":"Knitted Flowers, Camden Market, London"
+
+    },
+    {
+        "src":"photos/travel/image16.jpg",
+        "description":"Big Ben, London"
+
+    },
+    {
+        "src":"photos/travel/image17.jpeg",
+        "description":"Antibes, France"
+
+    },
+    {
+        "src":"photos/travel/image18.jpeg",
+        "description":"Eze, France"
+    
+     },
+     {
+        "src":"photos/travel/image19.jpg",
+        "description":"London"
+    
+    },
+    {
+        "src":"photos/travel/image20.jpg",
+        "description":"Eze, France"
+        
+    },
+    {
+       "src":"photos/travel/image21.jpg",
+        "description":"Nice, France"
+        
+    }
+
+
+]
