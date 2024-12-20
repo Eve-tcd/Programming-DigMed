@@ -34,13 +34,14 @@ const troyPics = [
 function setRandomImage() {
     const index = Math.floor(Math.random() * troyPics.length);
     document.body.style.backgroundImage = `url(${troyPics[index].path})`;
+    console.log(`url(${troyPics[index].path})`);
    
 }
 
 
 document.addEventListener("DOMContentLoaded", () => {
     setRandomImage(); 
-
+    
     document.addEventListener("keydown", (event) => {
         if (event.code === "Space") {
             setRandomImage(); 
